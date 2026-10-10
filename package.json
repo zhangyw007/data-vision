@@ -1,0 +1,23 @@
+{
+    "name": "data-show",
+    "version": "1.0.0",
+    "private": true,
+    "description": "企业数据大屏可视化 - Vue3 + ECharts + TypeScript",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.4.21",
+        "echarts": "^5.5.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
+        "typescript": "^5.4.5",
+        "vite": "^5.2.8",
+        "vue-tsc": "^2.0.11",
+        "sass": "^1.75.0"
+    }
+}

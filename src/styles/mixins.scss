@@ -1,0 +1,75 @@
+// ==========================================
+// 常用 Mixin
+// ==========================================
+@use 'variables' as *;
+// Flex 居中
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Flex 纵向居中
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// 文字截断
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 光晕文字
+@mixin text-glow($color: $primary) {
+    text-shadow: 0 0 10px $color, 0 0 20px rgba($color, 0.5);
+}
+
+// 光晕边框
+@mixin border-glow($color: $primary) {
+    border: 1px solid rgba($color, 0.3);
+    box-shadow: 0 0 10px rgba($color, 0.1), inset 0 0 10px rgba($color, 0.05);
+}
+
+// 卡片背景
+@mixin card-bg {
+    background: $bg-card;
+    backdrop-filter: blur(10px);
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+}
+
+// 渐变文字
+@mixin gradient-text($gradient: $gradient-primary) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// 绝对定位铺满
+@mixin absolute-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// 滚动条美化
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba($primary, 0.3);
+        border-radius: 2px;
+    }
+}

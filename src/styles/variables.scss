@@ -1,0 +1,56 @@
+// ==========================================
+// 全局 SCSS 变量 - 修改此文件即可全局换肤
+// ==========================================
+// 主色调 - 科技蓝
+$primary: #00d4ff;
+$primary-light: #00e8ff;
+$primary-dark: #0099cc;
+// 辅助色
+$secondary: #00ff88;
+$warning: #ffaa00;
+$danger: #ff4757;
+$success: #2ed573;
+// 渐变色
+$gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+$gradient-card: linear-gradient(180deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 102, 255, 0.05) 100%);
+$gradient-glow: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+// 背景色
+$bg-dark: #0a1929;
+$bg-darker: #060e1a;
+$bg-card: rgba(6, 25, 55, 0.8);
+$bg-card-hover: rgba(6, 25, 55, 0.95);
+// 边框色
+$border-color: rgba(0, 212, 255, 0.3);
+$border-glow: rgba(0, 212, 255, 0.6);
+// 文字色
+$text-primary: #e0f0ff;
+$text-secondary: rgba(160, 200, 240, 0.8);
+$text-muted: rgba(120, 160, 200, 0.5);
+// 字号
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-base: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-title: 32px;
+// 间距
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 24px;
+// 圆角
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+// 阴影
+$shadow-glow: 0 0 10px rgba(0, 212, 255, 0.3);
+$shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+// 动画时长
+$transition-fast: 0.2s;
+$transition-base: 0.3s;
+$transition-slow: 0.6s;
+// 设计稿基准尺寸
+$design-width: 1920;
+$design-height: 1080;
