@@ -34,9 +34,9 @@
         @click="selectedDimension = index"
       >
         <div class="dimension-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <component :is="dim.icon" />
-          </svg>
+          <el-icon :size="24">
+            <component :is="dim.iconComponent" />
+          </el-icon>
         </div>
         <div class="dimension-card__info">
           <div class="dimension-card__title">{{ dim.title }}</div>
@@ -168,6 +168,7 @@ import DonutChart from '@/components/charts/DonutChart.vue'
 import BarHorizontal from '@/components/charts/BarHorizontal.vue'
 import ScatterChart from '@/components/charts/ScatterChart.vue'
 import RoseChart from '@/components/charts/RoseChart.vue'
+import { User, TrendCharts, Star, DataLine } from '@element-plus/icons-vue'
 
 const timeRange = ref('month')
 const selectedDimension = ref(0)
@@ -178,25 +179,25 @@ const dimensions = ref([
     title: '用户行为',
     value: '86,432',
     trend: 12.5,
-    icon: { template: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />' }
+    iconComponent: User
   },
   {
     title: '交易转化',
     value: '68.5%',
     trend: -2.1,
-    icon: { template: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />' }
+    iconComponent: TrendCharts
   },
   {
     title: '留存率',
     value: '45.2%',
     trend: 5.8,
-    icon: { template: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />' }
+    iconComponent: Star
   },
   {
     title: '活跃度',
     value: '92,156',
     trend: 8.3,
-    icon: { template: '<path d="M22 12h-4l-3 9L9 3l-3 9H2" />' }
+    iconComponent: DataLine
   }
 ])
 
@@ -383,15 +384,15 @@ const insights = ref([
     width: 48px;
     height: 48px;
     border-radius: $radius-md;
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(79, 195, 247, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $primary;
+    color: #4fc3f7;
+    flex-shrink: 0;
 
-    svg {
-      width: 24px;
-      height: 24px;
+    .el-icon {
+      font-size: 24px;
     }
   }
 

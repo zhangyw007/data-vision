@@ -44,9 +44,9 @@
         <div class="stat-card__glow"></div>
         <div class="stat-card__header">
           <div class="stat-icon" :class="`stat-icon--${stat.color}`">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <component :is="stat.icon" />
-            </svg>
+            <el-icon :size="24">
+              <component :is="stat.iconComponent" />
+            </el-icon>
           </div>
           <div class="stat-trend" :class="`stat-trend--${stat.trend > 0 ? 'up' : 'down'}`">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -193,6 +193,7 @@ import LineChart from '@/components/charts/LineChart.vue'
 import PieChart from '@/components/charts/PieChart.vue'
 import BarChart from '@/components/charts/BarChart.vue'
 import RadarChart from '@/components/charts/RadarChart.vue'
+import { User, ShoppingCart, Money, TrendCharts } from '@element-plus/icons-vue'
 
 // 核心指标数据
 const statsData = ref([
@@ -202,7 +203,7 @@ const statsData = ref([
     unit: '人',
     trend: 12.5,
     color: 'blue',
-    icon: { template: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />' },
+    iconComponent: User,
     sparkline: 'M0,15 Q10,10 20,12 T40,8 T60,10 T80,5 T100,3'
   },
   {
@@ -211,7 +212,7 @@ const statsData = ref([
     unit: '单',
     trend: 8.3,
     color: 'green',
-    icon: { template: '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" />' },
+    iconComponent: ShoppingCart,
     sparkline: 'M0,12 Q10,8 20,10 T40,6 T60,8 T80,4 T100,2'
   },
   {
@@ -220,7 +221,7 @@ const statsData = ref([
     unit: '元',
     trend: 15.2,
     color: 'orange',
-    icon: { template: '<line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />' },
+    iconComponent: Money,
     sparkline: 'M0,18 Q10,15 20,12 T40,10 T60,8 T80,6 T100,4'
   },
   {
@@ -229,7 +230,7 @@ const statsData = ref([
     unit: '%',
     trend: -2.1,
     color: 'red',
-    icon: { template: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />' },
+    iconComponent: TrendCharts,
     sparkline: 'M0,8 Q10,10 20,12 T40,14 T60,12 T80,15 T100,16'
   }
 ])
@@ -474,30 +475,30 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
-  svg {
-    width: 24px;
-    height: 24px;
+  .el-icon {
+    font-size: 24px;
   }
 
   &--blue {
-    background: rgba(0, 212, 255, 0.15);
-    color: $primary;
+    background: rgba(79, 195, 247, 0.15);
+    color: #4fc3f7;
   }
 
   &--green {
-    background: rgba(46, 213, 115, 0.15);
-    color: $success;
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
   }
 
   &--orange {
-    background: rgba(255, 170, 0, 0.15);
-    color: $warning;
+    background: rgba(255, 152, 0, 0.15);
+    color: #ff9800;
   }
 
   &--red {
-    background: rgba(255, 71, 87, 0.15);
-    color: $danger;
+    background: rgba(255, 82, 82, 0.15);
+    color: #ff5252;
   }
 }
 
