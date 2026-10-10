@@ -73,7 +73,7 @@ const chartOptions = computed<EChartsOption>(() => ({
 const { getInstance } = useChart(chartRef, chartOptions)
 
 if (props.autoTooltip) {
-  const { start } = useAutoTooltip(getInstance, 2000)
+  const { start } = useAutoTooltip(getInstance, 3000)
   watch(() => props.data, (val) => {
     if (val.length > 0) start(val.length)
   }, { immediate: true })

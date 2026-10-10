@@ -8,10 +8,11 @@
     <!-- 加载动画 -->
     <div v-if="loading" class="loading-container">
       <div class="loading-spinner"></div>
+      <div class="loading-text">加载中...</div>
     </div>
 
     <!-- 主内容 -->
-    <DashboardLayout v-show="!loading" />
+    <AdminLayout v-show="!loading" />
   </div>
 </template>
 
@@ -19,9 +20,10 @@
 /**
  * App.vue - 根组件
  * 提供背景装饰、加载动画、全局动画控制
+ * 集成路由系统，使用后台管理布局
  */
 import { ref, onMounted } from 'vue'
-import DashboardLayout from '@/layout/DashboardLayout.vue'
+import AdminLayout from '@/layout/AdminLayout.vue'
 import { provideAnimationControl } from '@/utils/animation'
 
 // 提供全局动画开关
@@ -47,5 +49,46 @@ onMounted(() => {
   justify-content: center;
   background: $bg-dark;
   position: relative;
+}
+
+.loading-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-lg;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(0, 212, 255, 0.1);
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-size: $font-size-lg;
+  color: $text-secondary;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 </style>

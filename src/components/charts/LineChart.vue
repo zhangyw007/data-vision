@@ -85,7 +85,7 @@ const { getInstance } = useChart(chartRef, chartOptions)
 
 // tooltip 自动轮播
 if (props.autoTooltip) {
-  const { start } = useAutoTooltip(getInstance, 2000)
+  const { start } = useAutoTooltip(getInstance, 3000)
   watch(() => props.seriesData, (val) => {
     if (val.length > 0) start(val.length)
   }, { immediate: true })
