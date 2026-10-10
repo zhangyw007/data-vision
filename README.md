@@ -37,8 +37,8 @@
 
 ```bash
 # 克隆项目
-git clone https://gitee.com/your-repo/data-show.git
-cd data-show
+git clone https://github.com/zhangyw007/data-vision.git
+cd data-vision
 
 # 安装依赖
 npm install
@@ -58,7 +58,7 @@ npm run preview
 ## 项目结构
 
 ```
-data-show/
+data-vision/
 ├── index.html                  # 入口 HTML
 ├── package.json                # 项目配置
 ├── vite.config.ts              # Vite 配置
